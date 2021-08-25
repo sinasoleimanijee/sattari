@@ -10,10 +10,11 @@ from users.models import User
 from courses.models import Course, Enrollment
 from assignments.models import Assignment
 from resources.models import Resource
+from .forms import CreateCoursesForm
 
 # Create your views here.
 class CreateCourse(LoginRequiredMixin, generic.CreateView):
-    fields = ('course_name', 'course_description')
+    form_class = CreateCoursesForm
     model = Course
 
     def get(self, request,*args, **kwargs):
