@@ -12,18 +12,18 @@
     <div class="container">
         {% if submissions.assignment_ques.course.teacher.id == user.id or submissions.author.id == user.id %}
             <h1>{{submissions.topic}}</h1>
-            <h4>Submitted by: {{submissions.author}}</h4>
-            <h6>Submitted On: {{submissions.submitted_date}}</h6>
-            <p>Description: {{submissions.description}}</p>
-            <p>Submission: {{submissions.assignment_file.name}}</p>
+            <h4>{{submissions.author}} :ارسال شده از طرف </h4>
+            <h6> {{submissions.submitted_date}} :ارسال شده در تاریخ</h6>
+            <p>{{submissions.description}}:شرح</p>
+            <p>{{submissions.assignment_file.name}} :الصاق شده </p>
              
-            <a href="{{submissions.assignment_file.url}}" class="btn btn-lg btn-primary" download>Download</a>
+            <a href="{{submissions.assignment_file.url}}" class="btn btn-lg btn-primary" download>دانلود</a>
             <div class="grade">
                 {% if submissions.graded == False %}
-                    <p>This assignment has not been graded yet.</p>
+                    <p>این تکلیف هنوز نمره دهی نشده است</p>
                 {% else %}
-                    <p>This assignment has been graded.</p>
-                    <p>Grade: {{submissions.grade}}</p>
+                    <p>این تکلیف نمره دهی شده است</p>
+                    <p>{{submissions.grade}} :نمره</p>
                 {% endif %}
             </div>
                 
@@ -34,7 +34,7 @@
                     <form method="POST">
                         {% csrf_token %}
                         <a href="{% url 'assignments:submit_delete' pk=submissions.pk %}" 
-                        class="btn btn-danger btn-lg">Delete</a>
+                        class="btn btn-danger btn-lg">حذف</a>
                     </form>
                     
                 </div>
@@ -44,7 +44,7 @@
                     {% if submissions.graded == False %}
                         <div>
                             <a href="{% url 'assignments:grade' pk=submissions.pk %}" 
-                            class="btn btn-success btn-lg">Grade</a>
+                            class="btn btn-success btn-lg">نمره</a>
                         </div>
                     {% endif %}
                 {% endif %}

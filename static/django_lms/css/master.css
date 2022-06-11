@@ -1,14 +1,23 @@
 .sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 20%; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #111; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 20%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    right: 0;
 }
+
+* :not(.fa){
+    font-family: Vazir, sans-serif !important;
+}
+
+.side-position {
+    right: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'DM Sans', sans-serif;
 }
@@ -43,10 +52,10 @@ p, a {
 }
 
 .content {
-  margin-top: 2em;
-  margin-left: 22%;
-  margin-bottom: 2em;
-  margin-right: 2em;
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-bottom: 2em;
+    margin-right: 22%;
 }
 
 .sidemenu {

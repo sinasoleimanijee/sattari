@@ -19,13 +19,14 @@
             <a href="{% url 'assignments:delete' pk=assignment.pk %}" class="btn btn-danger btn-lg">Delete</a>
 
             <div class="submissions">
-            <h3>Submissions</h3>
+            <h3>تکالیف ارسالی</h3>
             
             {% for submissions in submitted %}
                 <a href="{% url 'assignments:submit_detail' pk=submissions.pk %}" class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">{{submissions.topic}}</h5>
                     <small>{{submissions.author}}</small>
+                    <h5 class="mb-1">{{submissions.topic}}</h5>
+
                     </div>
                     <p class="mb-1">
                     {{submissions.description}}
@@ -40,11 +41,11 @@
 
         {% else %}            
             {% if assignment.course in course %}
-                {% if duedate >= time %}
-                    <a href="{% url 'assignments:submit' %}" class="btn btn-success btn-lg">Submit Assignment</a>
+                {% if duedate >= time and not submitted.all%}
+                    <a href="{% url 'assignments:submit' %}" class="btn btn-success btn-lg">ارسال تکلیف</a>
                 {% endif %}
                 <div class="submissions">
-                <h3>My Submissions:</h3>
+                <h3>تکلیف ارسالی من</h3>
                 
                 {% for submissions in submitted %}
                     {% if submissions.author.id == user.id %}

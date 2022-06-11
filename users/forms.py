@@ -11,8 +11,10 @@ class UserCreateForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].label = 'Username'
-        self.fields['first_name'].label = 'First Name'
-        self.fields['last_name'].label = 'Last Name'
-        self.fields['email'].label = "Email Address"
-        self.fields['user_type'].label = "Register as:"
+        self.fields['username'].label = 'نام کاربری'
+        self.fields['first_name'].label = 'نام'
+        self.fields['last_name'].label = 'نام خانوادگی'
+        self.fields['email'].label = "آدرس ایمیل"
+        self.fields['user_type'].label = ":ثبت نام به عنوان "
+        self.fields['password1'].label = "رمز عبور "
+        self.fields['password2'].label = "تایید رمز عبور "
