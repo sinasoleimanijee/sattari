@@ -28,7 +28,7 @@ SECRET_KEY = 'x#d7_3ws7!%((d$pbm8l^=oghi%-^y&eo-9h@^^yx1#s826z0x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["94.101.184.129","sina.airaut.ir"]
 
 
 # Application definition
@@ -93,14 +93,22 @@ WSGI_APPLICATION = 'django_lms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'django_lms',
+#        'USER': 'root',
+#        'PASSWORD': 'password',
+#        'HOST': 'localhost',
+#        'PORT': '3306',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_lms',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase', # This is where you put the name of the db file. 
+                 # If one doesn't exist, it will be created at migration time.
     }
 }
 
